@@ -4,9 +4,11 @@ import {base_url} from "../utils/constants.jsx";
 
 const AboutMe = () => {
     const [person, setPerson] = useState({})
+    const id=1
 
     useEffect(() => {
-        fetch(`${base_url}/swagger-ui.html#/star-wars-controller/getPeopleByIdUsingGET`)
+
+        fetch(`${base_url}/swagger-ui.html#/star-wars-controller/getPeopleByIdUsingGET/${id}`)
             .then(response => response.json())
             .then(data => setPerson(data))
         return () => {
